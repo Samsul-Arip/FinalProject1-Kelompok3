@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">FinalProject1</string>
+    <string name="to_do_list">To Do List</string>
+    <string name="data_kosong">Data Kosong</string>
+    <string name="tekan_tambah_untuk_nmembuat_log">Tekan tambah untuk \nmembuat Log</string>
+    <string name="tambah_data">Tambah data</string>
+    <string name="add_new_task">Add new Task</string>
+    <string name="what_do_you_want">What do you want ?</string>
+    <string name="tuliskan_sesuatu">Tuliskan sesuatu</string>
+    <string name="add_task">Add Task</string>
+    <string name="complete_task">Complete Task</string>
+    <string name="catatan">Catatan</string>
+</resources>
