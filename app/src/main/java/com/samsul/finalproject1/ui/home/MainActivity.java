@@ -40,6 +40,11 @@ public class MainActivity extends AppCompatActivity {
             viewDialog.showDialog(MainActivity.this);
         });
 
+        noteAdapter.setOnItemClickCallBack(data -> {
+            ViewDialog viewDialog = new ViewDialog();
+            viewDialog.showconfirmation(MainActivity.this, data.getId());
+        });
+
     }
 
     private static MainViewModel obtainViewModel(AppCompatActivity activity) {

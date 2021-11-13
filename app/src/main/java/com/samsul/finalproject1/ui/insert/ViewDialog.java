@@ -1,5 +1,7 @@
 package com.samsul.finalproject1.ui.insert;
 
+import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -52,6 +54,25 @@ public class ViewDialog {
         });
 
         dialog.show();
+    }
+
+    public void showconfirmation(AppCompatActivity activity, int idNotes) {
+        AlertDialog.Builder alerBuilder = new AlertDialog.Builder(activity);
+        alerBuilder.setTitle("Apakah anda yakin!!");
+        alerBuilder.setMessage("Konfirmasi pilihan anda")
+                .setCancelable(false)
+                .setPositiveButton("Yes", (dialog, id) -> {
+                    Notes notes = new Notes();
+                    notes.setId(idNotes);
+                    noteAddViewModel = obtainViewModel(activity);
+                    noteAddViewModel.delete(notes);
+                    Toast.makeText(activity, "Task complete", Toast.LENGTH_SHORT).show();
+                })
+                .setNegativeButton("No", (dialog, id) -> {
+                    dialog.cancel();
+                });
+        AlertDialog alertDialog = alerBuilder.create();
+        alertDialog.show();
     }
 
     private static NoteAddViewModel obtainViewModel(AppCompatActivity activity) {

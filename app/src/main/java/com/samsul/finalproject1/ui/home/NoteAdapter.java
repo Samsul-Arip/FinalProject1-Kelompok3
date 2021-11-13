@@ -18,6 +18,11 @@ import java.util.List;
 public class NoteAdapter extends RecyclerView.Adapter<NoteViewHolder> {
 
     private final ArrayList<Notes> listNotes = new ArrayList<>();
+    public static OnItemClickCallBack onItemClickCallBack;
+
+    public void setOnItemClickCallBack(OnItemClickCallBack onItemClickCallBack) {
+        NoteAdapter.onItemClickCallBack = onItemClickCallBack;
+    }
 
     public void setListNotes(List<Notes> data) {
         final NoteDiffCallback diffCallback = new NoteDiffCallback(this.listNotes, data);
@@ -44,6 +49,10 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteViewHolder> {
     @Override
     public int getItemCount() {
         return listNotes.size();
+    }
+
+    public interface OnItemClickCallBack {
+        void onItemClicked(Notes notes);
     }
 
 

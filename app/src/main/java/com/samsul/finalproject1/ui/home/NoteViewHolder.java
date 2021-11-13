@@ -16,5 +16,8 @@ public class NoteViewHolder extends RecyclerView.ViewHolder {
 
     public void bind(Notes notes) {
         binding.tvCatatan.setText(notes.getDescription());
+        binding.btnCompleteTask.setOnClickListener(v -> {
+            NoteAdapter.onItemClickCallBack.onItemClicked(notes);
+        });
     }
 }
