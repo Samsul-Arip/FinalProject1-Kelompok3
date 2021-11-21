@@ -1,10 +1,11 @@
-package com.samsul.finalproject1.repository;
+package com.hacktive.finalproject1.repository;
 
 import android.app.Application;
 import androidx.lifecycle.LiveData;
-import com.samsul.finalproject1.database.NoteDao;
-import com.samsul.finalproject1.database.NoteRoomDatabase;
-import com.samsul.finalproject1.database.Notes;
+
+import com.hacktive.finalproject1.database.NoteDao;
+import com.hacktive.finalproject1.database.NoteRoomDatabase;
+import com.hacktive.finalproject1.database.Notes;
 
 import java.util.List;
 import java.util.concurrent.ExecutorService;

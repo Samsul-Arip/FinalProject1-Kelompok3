@@ -1,4 +1,4 @@
-package com.samsul.finalproject1.ui.home;
+package com.hacktive.finalproject1.ui.home;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
@@ -6,8 +6,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.os.Bundle;
 
-import com.samsul.finalproject1.ui.ViewModelFactory;
-import com.samsul.finalproject1.ui.insert.ViewDialog;
+import com.hacktive.finalproject1.ui.ViewModelFactory;
+import com.hacktive.finalproject1.viewmodel.MainViewModel;
+import com.hacktive.finalproject1.ui.insert.ViewDialog;
 import com.samsul.finalproject1.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {

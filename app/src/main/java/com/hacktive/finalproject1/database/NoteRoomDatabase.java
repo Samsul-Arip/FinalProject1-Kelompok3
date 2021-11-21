@@ -1,4 +1,4 @@
-package com.samsul.finalproject1.database;
+package com.hacktive.finalproject1.database;
 
 import android.content.Context;
 

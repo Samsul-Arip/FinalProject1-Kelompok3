@@ -1,16 +1,15 @@
-package com.samsul.finalproject1.ui.home;
+package com.hacktive.finalproject1.ui.home;
 
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.samsul.finalproject1.database.Notes;
+import com.hacktive.finalproject1.database.Notes;
 import com.samsul.finalproject1.databinding.ItemNoteBinding;
-import com.samsul.finalproject1.helper.NoteDiffCallback;
+import com.hacktive.finalproject1.helper.NoteDiffCallback;
 
 import java.util.ArrayList;
 import java.util.List;

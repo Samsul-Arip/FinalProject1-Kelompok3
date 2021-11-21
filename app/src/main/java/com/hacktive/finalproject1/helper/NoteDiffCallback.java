@@ -1,8 +1,8 @@
-package com.samsul.finalproject1.helper;
+package com.hacktive.finalproject1.helper;
 
 import androidx.recyclerview.widget.DiffUtil;
 
-import com.samsul.finalproject1.database.Notes;
+import com.hacktive.finalproject1.database.Notes;
 
 import java.util.List;
 
@@ -38,4 +38,6 @@ public class NoteDiffCallback extends DiffUtil.Callback {
 
         return oldData.getDescription().equals(newData.getDescription());
     }
+
+
 }

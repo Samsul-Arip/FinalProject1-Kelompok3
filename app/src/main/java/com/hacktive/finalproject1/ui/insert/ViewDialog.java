@@ -1,6 +1,5 @@
-package com.samsul.finalproject1.ui.insert;
+package com.hacktive.finalproject1.ui.insert;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.graphics.Color;
@@ -13,13 +12,14 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.hacktive.finalproject1.ui.ViewModelFactory;
+import com.hacktive.finalproject1.viewmodel.MainViewModel;
 import com.samsul.finalproject1.R;
-import com.samsul.finalproject1.database.Notes;
-import com.samsul.finalproject1.ui.ViewModelFactory;
+import com.hacktive.finalproject1.database.Notes;
 
 public class ViewDialog {
 
-    private NoteAddViewModel noteAddViewModel;
+    private MainViewModel mainViewModel;
 
     public void showDialog(AppCompatActivity activity) {
         final Dialog dialog = new Dialog(activity);
@@ -28,7 +28,7 @@ public class ViewDialog {
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.setContentView(R.layout.view_dialog_add);
 
-        noteAddViewModel = obtainViewModel(activity);
+        mainViewModel = obtainViewModel(activity);
 
         ImageView close = dialog.findViewById(R.id.imgClose);
         ImageView add = dialog.findViewById(R.id.imgAdd);
@@ -46,7 +46,7 @@ public class ViewDialog {
                 Toast.makeText(activity, "Silahkan tambahkan catatan", Toast.LENGTH_SHORT).show();
             } else {
                 notes.setDescription(description);
-                noteAddViewModel.insert(notes);
+                mainViewModel.insert(notes);
                 Toast.makeText(activity, "Berhasil menambahkan catatan", Toast.LENGTH_SHORT).show();
                 dialog.dismiss();
             }
@@ -64,8 +64,8 @@ public class ViewDialog {
                 .setPositiveButton("Yes", (dialog, id) -> {
                     Notes notes = new Notes();
                     notes.setId(idNotes);
-                    noteAddViewModel = obtainViewModel(activity);
-                    noteAddViewModel.delete(notes);
+                    mainViewModel = obtainViewModel(activity);
+                    mainViewModel.delete(notes);
                     Toast.makeText(activity, "Task complete", Toast.LENGTH_SHORT).show();
                 })
                 .setNegativeButton("No", (dialog, id) -> {
@@ -75,9 +75,9 @@ public class ViewDialog {
         alertDialog.show();
     }
 
-    private static NoteAddViewModel obtainViewModel(AppCompatActivity activity) {
+    private static MainViewModel obtainViewModel(AppCompatActivity activity) {
         ViewModelFactory factory = ViewModelFactory.getInstance(activity.getApplication());
 
-        return new ViewModelProvider(activity, factory).get(NoteAddViewModel.class);
+        return new ViewModelProvider(activity, factory).get(MainViewModel.class);
     }
 }

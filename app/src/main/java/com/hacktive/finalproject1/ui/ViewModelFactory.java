@@ -1,4 +1,4 @@
-package com.samsul.finalproject1.ui;
+package com.hacktive.finalproject1.ui;
 
 import android.app.Application;
 
@@ -6,8 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.samsul.finalproject1.ui.home.MainViewModel;
-import com.samsul.finalproject1.ui.insert.NoteAddViewModel;
+import com.hacktive.finalproject1.viewmodel.MainViewModel;
 
 public class ViewModelFactory extends ViewModelProvider.NewInstanceFactory {
 
@@ -33,10 +32,7 @@ public class ViewModelFactory extends ViewModelProvider.NewInstanceFactory {
     public <T extends ViewModel> T create(@NonNull Class<T> modelClass) {
         if(modelClass.isAssignableFrom(MainViewModel.class)) {
             return (T) new MainViewModel(mApplication);
-        } else if(modelClass.isAssignableFrom(NoteAddViewModel.class)) {
-            return (T) new NoteAddViewModel(mApplication);
         }
-
         throw new IllegalArgumentException("Unknown ViewModel class: " + modelClass.getName());
     }
 }

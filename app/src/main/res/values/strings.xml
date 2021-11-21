@@ -10,4 +10,8 @@
     <string name="add_task">Add Task</string>
     <string name="complete_task">Complete Task</string>
     <string name="catatan">Catatan</string>
+    <string name="edit_task">Edit Task</string>
+    <string name="edit">Edit</string>
+    <string name="edit_data">Edit Data</string>
+
 </resources>

@@ -1,4 +1,4 @@
-package com.samsul.finalproject1.database;
+package com.hacktive.finalproject1.database;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
